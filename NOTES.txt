@@ -1,1 +1,1 @@
-run npm install on app folder
+run npm install on app folder to add NODE MODULES
