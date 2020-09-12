@@ -1,7 +1,4 @@
-/* ========================
-COLORS
-===========================
-
+/* ======================
 Primary: #eb2f64
 Primary light: #FF3366
 Primary dark: #BA265D
@@ -14,6 +11,64 @@ Grey light 4: #ccc
 Grey dark 1: #333
 Grey dark 2: #777
 Grey dark 3: #999
-*/
+====================== */
+/* =Grid */
+/*  =Colors  */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /*  This set the font size of the site for 1rem  */
+  font-size: 62.5%; }
+
 body {
-  background-color: #eb2f64; }
+  box-sizing: border-box;
+  background-color: #fff; }
+
+/* =body  */
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #fff; }
+
+.grid-test {
+  margin-top: 10rem; }
+
+.row {
+  max-width: 114rem;
+  background-color: #ccc;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+  text-align: center;
+  /*  ^ Will select all attributes who start with "col-"  */
+  /* calc() can do Math with all units types
+  SASS can not      &  
+we do need "\#{}" to insert a SASS variable */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    padding: 1rem;
+    float: left;
+    background-color: #eb2f64; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
